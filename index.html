@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Cards de Programação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-content {
+            display: none;
+        }
+        .card.show .card-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="toggleContent(this)">
+            <h3>HTML</h3>
+            <p class="card-content">Linguagem de marcação para criar páginas web.</p>
+        </div>
+        <div class="card" onclick="toggleContent(this)">
+            <h3>CSS</h3>
+            <p class="card-content">Estiliza e organiza o layout das páginas web.</p>
+        </div>
+        <div class="card" onclick="toggleContent(this)">
+            <h3>JavaScript</h3>
+            <p class="card-content">Adiciona interatividade às páginas web.</p>
+        </div>
+    </div>
+    <script>
+        function toggleContent(card) {
+            card.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
